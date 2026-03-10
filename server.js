@@ -9,7 +9,8 @@ app.post("/webhook", async (req, res) => {
 
 
   console.log(event, "event")
-  console.log(req, "req full object")
+  console.log(req.event, "req event")
+  console.log(req.events, "req events")
   if (event === "pull_request") {
     const action = req.body.action
 
