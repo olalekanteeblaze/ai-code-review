@@ -7,6 +7,9 @@ app.use(express.json())
 app.post("/webhook", async (req, res) => {
   const event = req.headers["x-github-event"]
 
+
+  console.log(event, "event")
+  console.log(req.body, "req.body")
   if (event === "pull_request") {
     const action = req.body.action
 
